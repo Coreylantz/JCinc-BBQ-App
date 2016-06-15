@@ -44,7 +44,7 @@ var BBQApp = {
 	// Empty object, will hold all of our Yummly and LCBO content
 };
 // Recipe Finder variables, storing the url, key and ID
-BBQApp.recipeApiUrl = 'https://api.yummly.com/v1/api/recipes';
+BBQApp.recipeApiUrl = 'http://api.yummly.com/v1/api/recipes';
 BBQApp.recipeKey = 'adb94000e8a9955814a483ef0ca4592b';
 BBQApp.recipeID = '6cebcd5a';
 
@@ -72,8 +72,12 @@ BBQApp.getRecipeData = function (meatSelected, veggieArray) {
 };
 
 // Drink Finder variables, storing the Key and URL (which I've concatenated together)
-BBQApp.drinksKey = 'MDo0NjQ5MjEzNC0yMWY4LTExZTYtYTIxNy01ZjMzOTgzMzVmODU6djFobWhkNTlrWFhnTVBPemI4VWZHUUlFZE5IQUtTSlJUYmE3';
-BBQApp.drinksApiUrl = 'https://lcboapi.com/products';
+<<<<<<< HEAD
+BBQApp.drinksKey = 'MDozYjg1MzliMC0zMzEyLTExZTYtOTYxOS03M2FlNzdiMjVjYzc6anhoMTFiRjZBWmtnYVBxSzE0UzJVeVpYQ2FRMlNGTktab1NO';
+=======
+BBQApp.drinksKey = 'MDpkMGZlNGQ1Ni0yNmE2LTExZTYtYmVjMC0wM2RlNWI1ZTg1MzE6ekRJd01yU0JoVTE1ZEQwZ1N1T2J4dnNObTNnQWJNRDdNQVlF';
+>>>>>>> c1f42d7b2f4f205e7336eb6c6b66c032999e4488
+BBQApp.drinksApiUrl = 'http://lcboapi.com/products';
 
 var ajaxCalls = function ajaxCalls(meatSelected, veggieSelected, veggieArray, drinkSelected) {
 	return {
@@ -109,7 +113,7 @@ var ajaxCalls = function ajaxCalls(meatSelected, veggieSelected, veggieArray, dr
 	};
 };
 // LBCO Inventory variables
-BBQApp.drinksInventory = 'https://lcboapi.com/stores';
+BBQApp.drinksInventory = 'http://lcboapi.com/stores';
 BBQApp.storeIdAndName = [];
 
 // obtain user postal code - var userlocation
@@ -298,7 +302,7 @@ BBQApp.displayFoodResults = function (results) {
 			// And the recipes image in a variable
 			var recipeImage = recipeObjects[i].smallImageUrls[0].replace(/s90/g, 's250');
 			// Also the link to the recipes url in a variable
-			var recipeLink = "https://www.yummly.com/recipe/" + recipeObjects[i].id;
+			var recipeLink = "http://www.yummly.com/recipe/" + recipeObjects[i].id;
 			// And finally we store the cooking time a variable
 			var recipeCookTime = recipeObjects[i].totalTimeInSeconds / 60;
 			// And we log the results
@@ -357,7 +361,7 @@ BBQApp.displayDrinkResults = function (results) {
 				BBQApp.drinkId = drinkObjects[i].id;
 
 				// And the same for the category of drink
-				var drinkLink = "https://www.lcbo.com/lcbo/search?searchTerm=" + BBQApp.drinkId;
+				var drinkLink = "http://www.lcbo.com/lcbo/search?searchTerm=" + BBQApp.drinkId;
 				// We then log them
 				// console.log(drinkName);
 				// console.log(drinkLink);
