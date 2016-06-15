@@ -72,7 +72,7 @@ BBQApp.getRecipeData = function (meatSelected, veggieArray) {
 
 // Drink Finder variables, storing the Key and URL (which I've concatenated together)
 
-BBQApp.drinksKey = 'MDo4MzVjNmNmNi0zMzE1LTExZTYtOTFmYy1mMzY1ZGVmNGU1ZGU6TFhKdXVoc24wVHdIMlJaRmMzRzV1M05tYXR4Q2RBY3lEam1N';
+BBQApp.drinksKey = 'MDozMGM4NTU2Yy0zMzE2LTExZTYtOTQyOC05NzBiNTFmMTc4NWU6b0ZVQ0lVUzVsZXJ2T2F2Rm9nZkZpVnJLbXlXY00xa1Y2S3hR';
 
 BBQApp.drinksApiUrl = 'https://lcboapi.com/products';
 
@@ -110,7 +110,7 @@ var ajaxCalls = function(meatSelected, veggieSelected, veggieArray, drinkSelecte
 	};
 };
 // LBCO Inventory variables
-BBQApp.drinksInventory = 'http://lcboapi.com/stores';
+BBQApp.drinksInventory = 'https://lcboapi.com/stores';
 BBQApp.storeIdAndName = [];
 
 // obtain user postal code - var userlocation
@@ -229,7 +229,7 @@ BBQApp.imageColor = function() {
 			$(drinkImg).attr('src', drinkImg.data('white'));
 		}
 	});
-}
+};
 
 
 // Storing object items in a variable
