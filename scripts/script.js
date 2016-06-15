@@ -44,7 +44,7 @@ var BBQApp = {
 	// Empty object, will hold all of our Yummly and LCBO content
 };
 // Recipe Finder variables, storing the url, key and ID
-BBQApp.recipeApiUrl = 'http://api.yummly.com/v1/api/recipes';
+BBQApp.recipeApiUrl = 'https://api.yummly.com/v1/api/recipes';
 BBQApp.recipeKey = 'adb94000e8a9955814a483ef0ca4592b';
 BBQApp.recipeID = '6cebcd5a';
 
@@ -345,7 +345,7 @@ BBQApp.displayFoodResults = function (results) {
 			// And the recipes image in a variable
 			var recipeImage = recipeObjects[i].smallImageUrls[0].replace(/s90/g, 's250');
 			// Also the link to the recipes url in a variable
-			var recipeLink = "http://www.yummly.com/recipe/" + recipeObjects[i].id;
+			var recipeLink = "https://www.yummly.com/recipe/" + recipeObjects[i].id;
 			// And finally we store the cooking time a variable
 			var recipeCookTime = recipeObjects[i].totalTimeInSeconds / 60;
 			// And we log the results
