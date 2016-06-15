@@ -72,12 +72,10 @@ BBQApp.getRecipeData = function (meatSelected, veggieArray) {
 };
 
 // Drink Finder variables, storing the Key and URL (which I've concatenated together)
-<<<<<<< HEAD
-BBQApp.drinksKey = 'MDozYjg1MzliMC0zMzEyLTExZTYtOTYxOS03M2FlNzdiMjVjYzc6anhoMTFiRjZBWmtnYVBxSzE0UzJVeVpYQ2FRMlNGTktab1NO';
-=======
-BBQApp.drinksKey = 'MDpkMGZlNGQ1Ni0yNmE2LTExZTYtYmVjMC0wM2RlNWI1ZTg1MzE6ekRJd01yU0JoVTE1ZEQwZ1N1T2J4dnNObTNnQWJNRDdNQVlF';
->>>>>>> c1f42d7b2f4f205e7336eb6c6b66c032999e4488
-BBQApp.drinksApiUrl = 'http://lcboapi.com/products';
+
+BBQApp.drinksKey = 'MDo4MzVjNmNmNi0zMzE1LTExZTYtOTFmYy1mMzY1ZGVmNGU1ZGU6TFhKdXVoc24wVHdIMlJaRmMzRzV1M05tYXR4Q2RBY3lEam1N';
+
+BBQApp.drinksApiUrl = 'https://lcboapi.com/products';
 
 var ajaxCalls = function ajaxCalls(meatSelected, veggieSelected, veggieArray, drinkSelected) {
 	return {
@@ -87,11 +85,7 @@ var ajaxCalls = function ajaxCalls(meatSelected, veggieSelected, veggieArray, dr
 				_app_key: BBQApp.recipeKey,
 				_app_id: BBQApp.recipeID,
 				// Currently searching for steak, will be changed to user input
-<<<<<<< HEAD
 				q: " barbeque" + ' ' + meatSelected + ' ' + veggieArray,
-=======
-				q: " barbeque" + meatSelected + veggieArray,
->>>>>>> c1f42d7b2f4f205e7336eb6c6b66c032999e4488
 				// Below line will filter through, only showing results with pictures
 				requirePictures: true,
 				// Limiting the results to a set number
@@ -172,7 +166,6 @@ BBQApp.putLCBOOnPage = function (hasStock) {
 
 // Adding the search for postal onto the page
 
-<<<<<<< HEAD
 // BBQApp.showPostalSearch = function() {
 // 	$('.showPostal').on('click', function(){
 // 		$('.find').addClass('show');
@@ -231,25 +224,6 @@ BBQApp.imageColor = function () {
 		}
 	});
 };
-=======
-BBQApp.showPostalSearch = function () {
-	$('.showPostal').on('click', function () {
-		$('.find').addClass('show');
-		$('#close-find').on('click', function () {
-			$('.find').removeClass('show');
-			$('.postalResults').empty();
-		});
-	});
-};
-// Get the LCBOs on the page
-BBQApp.printLCBOLocations = function (LCBOLocationsInStock) {
-	for (var i = 0; i < BBQApp.LCBOLocationsInStock.length; i++) {
-		var store = BBQApp.LCBOLocationsInStock[i].locationName;
-		var storeLocation = BBQApp.LCBOLocationsInStock[i].locationAddressLine;
-	}
-	$('.postalResults').append('<a href="http://maps.google.com/?q=lcbo+' + storeLocation + '" target="_blank"' + '<p>' + store + ': ' + storeLocation + '</p>');
-};
->>>>>>> c1f42d7b2f4f205e7336eb6c6b66c032999e4488
 
 // Storing object items in a variable
 BBQApp.nearestLCBO = function (location) {
@@ -269,7 +243,6 @@ BBQApp.nearestLCBO = function (location) {
 	console.log(BBQApp.storeIdAndName);
 };
 
-<<<<<<< HEAD
 // BBQApp.postalSearch = function() {
 // 	// BBQApp.showPostalSearch();
 // 	// On submit of the postal code, we store the result in a variable
@@ -281,19 +254,6 @@ BBQApp.nearestLCBO = function (location) {
 // 		$('.postalResults').empty();
 // 	});
 // };
-=======
-BBQApp.postalSearch = function () {
-	BBQApp.showPostalSearch();
-	// On submit of the postal code, we store the result in a variable
-	$('#btnSearchStores').on('click', function (e) {
-		e.preventDefault();
-		var userPostal = $('input[id=txtPostalCode]').val();
-		console.log(BBQApp.drinkId);
-		BBQApp.getLCBO(userPostal);
-		$('.postalResults').empty();
-	});
-};
->>>>>>> c1f42d7b2f4f205e7336eb6c6b66c032999e4488
 
 // Get users meat choice and pass value to Ajax call
 BBQApp.getUserSelection = function () {
@@ -327,15 +287,11 @@ BBQApp.getUserSelection = function () {
 		// we collect multiple veggieSelected choices and put them in the veggieArray
 		// and make them into a value
 		var drinkSelected = $('input[name=drink]:checked').val();
-<<<<<<< HEAD
 		if (meatSelected === " Beef" && drinkSelected === " wine") {
 			drinkSelected = " red wine";
 		} else if (meatSelected != " Beef" && drinkSelected === " wine") {
 			drinkSelected = " white wine";
 		}
-=======
-
->>>>>>> c1f42d7b2f4f205e7336eb6c6b66c032999e4488
 		// 	BBQApp.getMixedDrinkData();
 		// }
 		// else {	
@@ -457,18 +413,13 @@ BBQApp.displayDrinkResults = function (results) {
 
 				$('#food-item' + i).append("<div class='pairsWithWrapper'>" + "<h3>Pair this with:</h3></div>");
 
-<<<<<<< HEAD
 				if (drinkImg !== null) {
-=======
-				if (drinkImg != null) {
->>>>>>> c1f42d7b2f4f205e7336eb6c6b66c032999e4488
 					$('#food-item' + i).append("<img class='drinkImg' src='" + drinkImg + "'>");
 				}
 
 				$('#food-item' + i).append("<h2 class='drinkName'>" + drinkName + "</h2>");
 				$('#food-item' + i).append("<p class='drinkStyle'>Style: " + drinkStyle + "</p>");
 				$('#food-item' + i).append("<a href='" + drinkLink + "' target='_blank'>" + "More Details..." + "</a>");
-<<<<<<< HEAD
 				// $('#food-item' + i).append(
 				// 	"<a href='#postalSearch'>" +
 				// 	"<button class='blueButton showPostal'>Find the nearest location</button>");
@@ -476,13 +427,6 @@ BBQApp.displayDrinkResults = function (results) {
 		}
 	}
 	// BBQApp.postalSearch();
-=======
-				$('#food-item' + i).append("<a href='#postalSearch'>" + "<button class='blueButton showPostal'>Find the nearest location</button>");
-			}
-		}
-	}
-	BBQApp.postalSearch();
->>>>>>> c1f42d7b2f4f205e7336eb6c6b66c032999e4488
 };
 
 BBQApp.restart = function () {
@@ -499,10 +443,7 @@ BBQApp.init = function () {
 	// BBQApp.getLCBOinventory();
 	BBQApp.getUserSelection();
 	BBQApp.restart();
-<<<<<<< HEAD
 	BBQApp.imageColor();
-=======
->>>>>>> c1f42d7b2f4f205e7336eb6c6b66c032999e4488
 };
 
 $(document).ready(function () {

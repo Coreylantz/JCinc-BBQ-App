@@ -151,12 +151,8 @@ input[type=radio]:checked + label {
 
 label {
   transition: all 0.3s ease-in-out;
-<<<<<<< HEAD
   text-align: center;
   border: 1px solid transparent; }
-=======
-  text-align: center; }
->>>>>>> c1f42d7b2f4f205e7336eb6c6b66c032999e4488
 
 label:hover {
   background: #4a90e2; }
@@ -165,10 +161,6 @@ img {
   max-width: 100%; }
 
 body {
-<<<<<<< HEAD
-=======
-  background: #d0021b;
->>>>>>> c1f42d7b2f4f205e7336eb6c6b66c032999e4488
   font-family: "Open Sans";
   color: #4a4a4a; }
 
@@ -312,10 +304,6 @@ header, footer {
   text-transform: uppercase;
   font-weight: bold;
   border: none;
-<<<<<<< HEAD
-=======
-  border-radius: 12px;
->>>>>>> c1f42d7b2f4f205e7336eb6c6b66c032999e4488
   box-shadow: 1.5px 1.5px 5px #4a4a4a;
   transition: all 0.5s ease-in-out; }
   .blueButton:hover, .lets-get-results:hover, .find.show #btnSearchStores:hover, .blueButton:focus, .lets-get-results:focus, .find.show #btnSearchStores:focus {
@@ -378,13 +366,10 @@ header, footer {
   -ms-flex-direction: column;
       flex-direction: column;
   text-align: center;
-<<<<<<< HEAD
   -ms-flex-pack: center;
       justify-content: center;
   -ms-flex-align: center;
       align-items: center;
-=======
->>>>>>> c1f42d7b2f4f205e7336eb6c6b66c032999e4488
   width: 70px; }
 
 .lets-get-results {
@@ -422,25 +407,11 @@ footer {
 
 .results img {
   width: 25%;
-<<<<<<< HEAD
   float: left; }
-=======
-  float: right; }
->>>>>>> c1f42d7b2f4f205e7336eb6c6b66c032999e4488
   @media (max-width: 760px) {
     .results img {
       width: 100%; } }
 
-<<<<<<< HEAD
-=======
-.results img.drinkImg {
-  width: 25%;
-  float: left; }
-  @media (max-width: 760px) {
-    .results img.drinkImg {
-      width: 100%; } }
-
->>>>>>> c1f42d7b2f4f205e7336eb6c6b66c032999e4488
 .recipeWrapper {
   width: 80%;
   float: left; }
@@ -449,10 +420,7 @@ footer {
   border: 1px solid #4a4a4a;
   padding: 15px;
   margin-bottom: 20px;
-<<<<<<< HEAD
   margin-left: 20px;
-=======
->>>>>>> c1f42d7b2f4f205e7336eb6c6b66c032999e4488
   width: calc(75% - 20px);
   float: left; }
   @media (max-width: 760px) {
