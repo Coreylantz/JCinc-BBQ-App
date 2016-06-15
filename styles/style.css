@@ -151,7 +151,8 @@ input[type=radio]:checked + label {
 
 label {
   transition: all 0.3s ease-in-out;
-  text-align: center; }
+  text-align: center;
+  border: 1px solid transparent; }
 
 label:hover {
   background: #4a90e2; }
@@ -160,7 +161,6 @@ img {
   max-width: 100%; }
 
 body {
-  background: #d0021b;
   font-family: "Open Sans";
   color: #4a4a4a; }
 
@@ -304,7 +304,6 @@ header, footer {
   text-transform: uppercase;
   font-weight: bold;
   border: none;
-  border-radius: 12px;
   box-shadow: 1.5px 1.5px 5px #4a4a4a;
   transition: all 0.5s ease-in-out; }
   .blueButton:hover, .lets-get-results:hover, .find.show #btnSearchStores:hover, .blueButton:focus, .lets-get-results:focus, .find.show #btnSearchStores:focus {
@@ -367,6 +366,10 @@ header, footer {
   -ms-flex-direction: column;
       flex-direction: column;
   text-align: center;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-align: center;
+      align-items: center;
   width: 70px; }
 
 .lets-get-results {
@@ -404,16 +407,9 @@ footer {
 
 .results img {
   width: 25%;
-  float: right; }
-  @media (max-width: 760px) {
-    .results img {
-      width: 100%; } }
-
-.results img.drinkImg {
-  width: 25%;
   float: left; }
   @media (max-width: 760px) {
-    .results img.drinkImg {
+    .results img {
       width: 100%; } }
 
 .recipeWrapper {
@@ -424,6 +420,7 @@ footer {
   border: 1px solid #4a4a4a;
   padding: 15px;
   margin-bottom: 20px;
+  margin-left: 20px;
   width: calc(75% - 20px);
   float: left; }
   @media (max-width: 760px) {
