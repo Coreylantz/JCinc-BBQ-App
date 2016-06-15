@@ -229,7 +229,7 @@ BBQApp.imageColor = function() {
 			$(drinkImg).attr('src', drinkImg.data('white'));
 		}
 	});
-};
+};	
 
 
 // Storing object items in a variable
