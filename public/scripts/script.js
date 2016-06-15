@@ -72,7 +72,11 @@ BBQApp.getRecipeData = function (meatSelected, veggieArray) {
 };
 
 // Drink Finder variables, storing the Key and URL (which I've concatenated together)
+<<<<<<< HEAD
 BBQApp.drinksKey = 'MDozYjg1MzliMC0zMzEyLTExZTYtOTYxOS03M2FlNzdiMjVjYzc6anhoMTFiRjZBWmtnYVBxSzE0UzJVeVpYQ2FRMlNGTktab1NO';
+=======
+BBQApp.drinksKey = 'MDpkMGZlNGQ1Ni0yNmE2LTExZTYtYmVjMC0wM2RlNWI1ZTg1MzE6ekRJd01yU0JoVTE1ZEQwZ1N1T2J4dnNObTNnQWJNRDdNQVlF';
+>>>>>>> c1f42d7b2f4f205e7336eb6c6b66c032999e4488
 BBQApp.drinksApiUrl = 'http://lcboapi.com/products';
 
 var ajaxCalls = function ajaxCalls(meatSelected, veggieSelected, veggieArray, drinkSelected) {
