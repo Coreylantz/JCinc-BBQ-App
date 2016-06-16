@@ -1,48 +1,49 @@
 'use strict';
 
 // -- START --
+var BBQApp = {};
 
 // SMOOTH SCROLL
-$('#firstButton').on('click', function () {
-	$.smoothScroll({
-		scrollTarget: '.user-select'
+BBQApp.smoothScroll = function () {
+	$('#firstButton').on('click', function () {
+		$.smoothScroll({
+			scrollTarget: '.user-select'
+		});
 	});
-});
 
-$('#getResultsButton').on('click', function () {
-	$('html, body').animate({
-		scrollTop: $('.results').offset().top
-	}, 850);
-});
+	$('#getResultsButton').on('click', function () {
+		$('html, body').animate({
+			scrollTop: $('.results').offset().top
+		}, 850);
+	});
+};
 
 // SHOW ABOUT SECTION START
 // The checkAbout function will be called below, to change the text of the HTML on the header
-var checkAbout = function checkAbout() {
-	var about = $('#about').text();
-	if (about == "About") {
-		$('#about').text('Close');
-	} else {
-		$('#about').text('About');
-	}
+BBQApp.aboutSection = function () {
+	var checkAbout = function checkAbout() {
+		var about = $('#about').text();
+		if (about == "About") {
+			$('#about').text('Close');
+		} else {
+			$('#about').text('About');
+		}
+	};
+
+	$('#show-about').on('click', function () {
+		// We need to display flex the main nav
+		$('.popup-about').toggleClass('show');
+		checkAbout();
+	});
+
+	$('#close-about').on('click', function () {
+		$('.popup-about').removeClass('show');
+		checkAbout();
+	});
 };
-
-$('#show-about').on('click', function () {
-	// We need to display flex the main nav
-	$('.popup-about').toggleClass('show');
-	checkAbout();
-});
-
-$('#close-about').on('click', function () {
-	$('.popup-about').removeClass('show');
-	checkAbout();
-});
 
 // SHOW ABOUT END
 
-// YUMMLY API CALL
-var BBQApp = {
-	// Empty object, will hold all of our Yummly and LCBO content
-};
 // Recipe Finder variables, storing the url, key and ID
 BBQApp.recipeApiUrl = 'http://api.yummly.com/v1/api/recipes';
 BBQApp.recipeKey = 'adb94000e8a9955814a483ef0ca4592b';
@@ -232,10 +233,9 @@ BBQApp.nearestLCBO = function (location) {
 		var locationId = locationObjects[i].id;
 		var store = { locationName: locationName, locationId: locationId, locationAddressLine: locationAddressLine };
 		// console.log(locationId);
-		var pushLocationObject = function pushLocationObject() {
-			BBQApp.storeIdAndName.push(store);
-		};
-		pushLocationObject();
+
+		BBQApp.storeIdAndName.push(store);
+
 		BBQApp.getLCBOinventory(locationId);
 	}
 	console.log(BBQApp.storeIdAndName);
@@ -439,6 +439,8 @@ BBQApp.init = function () {
 	// Keep this clean, only call functions in here
 	// BBQApp.getPostalCode();
 	// BBQApp.getLCBOinventory();
+	BBQApp.smoothScroll();
+	BBQApp.aboutSection();
 	BBQApp.getUserSelection();
 	BBQApp.restart();
 	BBQApp.imageColor();

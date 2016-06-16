@@ -1,41 +1,45 @@
 'use strict';
 
 // -- START --
+var BBQApp = {};
 
 // SMOOTH SCROLL
-$('#firstButton').on('click', function () {
-	$.smoothScroll({
-		scrollTarget: '.user-select'
+BBQApp.smoothScroll = function() {
+	$('#firstButton').on('click', function () {
+		$.smoothScroll({
+			scrollTarget: '.user-select'
+		});
 	});
-});
 
-$('#getResultsButton').on('click', function () {
-	$('html, body').animate({
-		scrollTop: $('.results').offset().top
-	}, 850);
-});
-
+	$('#getResultsButton').on('click', function () {
+		$('html, body').animate({
+			scrollTop: $('.results').offset().top
+		}, 850);
+	});
+};
 // SHOW ABOUT SECTION START
 // The checkAbout function will be called below, to change the text of the HTML on the header
-var checkAbout = function checkAbout() {
-	var about = $('#about').text();
-	if (about == "About") {
-		$('#about').text('Close');
-	} else {
-		$('#about').text('About');
-	}
+BBQApp.showAbout = function() {
+	var checkAbout = function checkAbout() {
+		var about = $('#about').text();
+		if (about == "About") {
+			$('#about').text('Close');
+		} else {
+			$('#about').text('About');
+		}
+	};
+
+	$('#show-about').on('click', function () {
+		// We need to display flex the main nav
+		$('.popup-about').toggleClass('show');
+		checkAbout();
+	});
+
+	$('#close-about').on('click', function () {
+		$('.popup-about').removeClass('show');
+		checkAbout();
+	});
 };
-
-$('#show-about').on('click', function () {
-	// We need to display flex the main nav
-	$('.popup-about').toggleClass('show');
-	checkAbout();
-});
-
-$('#close-about').on('click', function () {
-	$('.popup-about').removeClass('show');
-	checkAbout();
-});
 
 // SHOW ABOUT END
 
@@ -442,6 +446,7 @@ BBQApp.init = function () {
 	BBQApp.getUserSelection();
 	BBQApp.restart();
 	BBQApp.imageColor();
+	BBQApp.smoothScroll();
 };
 
 $(document).ready(function () {
